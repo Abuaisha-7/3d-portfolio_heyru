@@ -110,7 +110,7 @@ section {
     }
 
     &.not-scrolled {
-      @apply md:top-10 top-0 bg-transparent;
+      @apply top-0 bg-transparent;
     }
 
     .inner {
@@ -154,6 +154,7 @@ section {
     }
   }
 
+ 
   .app-showcase {
     @apply w-full mt-20 px-5 md:px-20 py-10 md:py-20 flex items-center justify-center;
 
