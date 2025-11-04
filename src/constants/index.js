@@ -245,20 +245,20 @@ const testimonials = [
 ];
 
 const socialImgs = [
+
   {
-    name: "insta",
-    imgPath: "/images/insta.png",
-  },
-  {
-    name: "fb",
-    imgPath: "/images/fb.png",
+    name: "git",
+     url:"https://github.com/Abuaisha-7",
+    imgPath: "/images/gh.png",
   },
   {
     name: "x",
+     url:"https://x.com/HeyruBedru",
     imgPath: "/images/x.png",
   },
   {
     name: "linkedin",
+     url:"https://www.linkedin.com/in/heyru-bedru-3b8540227",
     imgPath: "/images/linkedin.png",
   },
 ];
