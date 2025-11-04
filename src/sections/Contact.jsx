@@ -1,11 +1,13 @@
+import { useRef, useState } from "react";
+import TitleHeader from "../components/TitleHeader";
+import ContactExperience from "../components/models/contact/ContactExperience";
 
-import { useState } from 'react';
-import TitleHeader from '../components/TitleHeader';
-import ContactExperience from '../components/models/contact/ContactExperience';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
 
-      const [loading, setLoading] = useState(false);
+     const formRef = useRef(null);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -18,9 +20,26 @@ const Contact = () => {
   };
 
   const handleSubmit = async (e) => {
-     e.preventDefault();
+    e.preventDefault();
     setLoading(true); // Show loading state
-  }
+    console.log(form)
+
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+         formRef.current,
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+      );
+
+      // Reset form and stop loading
+      setForm({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.log("EMALJS ERROR,", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section id="contact" className="flex-center section-padding">
@@ -30,11 +49,11 @@ const Contact = () => {
           sub="💬 Have questions or ideas? Let’s talk! 🚀"
         />
         <div className="grid-12-cols mt-16">
-            {/* LEFT SIDE */}
+          {/* LEFT SIDE */}
           <div className="xl:col-span-5">
             <div className="flex-center card-border rounded-xl p-10">
               <form
-                // ref={formRef}
+                ref={formRef}
                 onSubmit={handleSubmit}
                 className="w-full flex flex-col gap-7"
               >
@@ -102,6 +121,6 @@ const Contact = () => {
       </div>
     </section>
   );
-}
+};
 
-export default Contact
+export default Contact;
