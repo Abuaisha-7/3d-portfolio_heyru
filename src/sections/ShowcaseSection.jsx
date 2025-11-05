@@ -53,17 +53,15 @@ const ShowcaseSection = () => {
         <div className="showcaselayout">
           {/* LEFT */}
           <div ref={rydeRef} className="first-project-wrapper">
-            <div className="image-wrapper">
-              <img src="/images/project1.png" alt="Ryde App Interface" />
+            <div className="image-wrapper bg-[#FFEFDB]">
+              <img src="/images/project4.png" alt="Ryde App Interface" />
             </div>
             <div className="text-content">
               <h2>
-                On-Demand Rides Made Simple with a Powerful, User-Friendly App
-                called Ryde
+                YC Directory - A Startup Showcase App
               </h2>
               <p className="text-white-50 md:text-xl">
-                An app built with React Native, Expo, & TailwindCSS for a fast,
-                user-friendly experience.
+                A Next.js app that showcases and explores startups, powered by Sanity CMS. Browse startup cards, view detailed pitches rendered from Markdown, filter by category, and discover editor-curated picks. Sentry is integrated for error monitoring.
               </p>
             </div>
           </div>
@@ -81,9 +79,9 @@ const ShowcaseSection = () => {
             </div>
             <div ref={ycDirectoryRef} className="project">
               <div className="image-wrapper bg-[#FFE7EB]">
-                <img src="/images/project3.png" alt="YC Directory App" />
+                <img src="/images/Abe_garaj1.png" alt="YC Directory App" />
               </div>
-              <h2>YC Directory - A Startup Showcase App</h2>
+              <h2>Abe Garage: Your Premier Automotive Service and Repair Hub</h2>
             </div>
           </div>
         </div>
